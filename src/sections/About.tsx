@@ -1,7 +1,7 @@
 export function About() {
   return (
     <section className="bg-brand-50 py-24">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2 md:items-center">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-2 md:items-center">
         <div>
           <span className="text-sm font-semibold uppercase tracking-wider text-brand-600">
             Sobre nós

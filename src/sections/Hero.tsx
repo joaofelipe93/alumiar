@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
+import heroImg from "../assets/hero/hero.webp";
+
 export function Hero() {
   return (
-    <section className="bg-cream pb-12 pt-2">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="bg-white">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="bg-white p-8 md:p-12">
           <div className="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
@@ -28,7 +30,11 @@ export function Hero() {
             </div>
 
             <div className="relative">
-              <div className="aspect-[4/5] w-full bg-gradient-to-br from-brand-100 via-cream to-brand-200" />
+              <img
+                src={heroImg}
+                alt="Equipe Alumiar em ação"
+                className="aspect-[4/5] w-full object-cover"
+              />
 
               <div className="absolute right-4 top-6 bg-brand-500 px-5 py-3 text-white shadow-lg">
                 <p className="text-[10px] font-semibold uppercase tracking-widest opacity-80">

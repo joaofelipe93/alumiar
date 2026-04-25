@@ -33,7 +33,7 @@ const cols = [
 export function Footer() {
   return (
     <footer className="bg-ink text-white">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Link to="/" className="flex items-center gap-2 text-xl font-bold">
@@ -79,7 +79,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <p className="mx-auto max-w-6xl px-6 py-6 text-center text-[10px] uppercase tracking-widest text-white/40">
+        <p className="mx-auto max-w-7xl px-6 py-6 text-center text-[10px] uppercase tracking-widest text-white/40">
           © {new Date().getFullYear()} Alumiar Agência. Todos os direitos reservados.
         </p>
       </div>

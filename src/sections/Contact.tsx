@@ -9,8 +9,8 @@ export function Contact() {
   }
 
   return (
-    <section id="contato" className="bg-cream py-12">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="contato" className="bg-white">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="bg-white p-8 md:p-12">
           <div className="grid gap-10 md:grid-cols-2 md:items-start">
             <div>
