@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -41,9 +42,22 @@ const services = [
 ];
 
 export function Services() {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  function scroll(direction: "left" | "right") {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const cardWidth = el.firstElementChild?.clientWidth ?? 280;
+    const gap = 16;
+    el.scrollBy({
+      left: (cardWidth + gap) * (direction === "left" ? -1 : 1),
+      behavior: "smooth",
+    });
+  }
+
   return (
-    <section id="servicos" className="bg-cream py-12">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="servicos" className="bg-white">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="bg-white p-8 md:p-12">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
@@ -55,22 +69,48 @@ export function Services() {
                 desenhados para máximo impacto e mínimo desperdício de recursos.
                 Entregamos crescimento engenheirado, não suposições.
               </p>
+              <Link
+                to="/servicos"
+                className="mt-6 inline-flex items-center gap-2 bg-ink px-6 py-3 text-xs font-bold tracking-widest text-white transition hover:bg-ink-soft"
+              >
+                VER TODOS OS SERVIÇOS →
+              </Link>
             </div>
-            <Link
-              to="/servicos"
-              className="inline-flex items-center gap-2 self-start bg-ink px-6 py-3 text-xs font-bold tracking-widest text-white transition hover:bg-ink-soft md:self-auto"
-            >
-              VER TODOS OS SERVIÇOS →
-            </Link>
+
+            <div className="flex gap-2 self-start md:self-end">
+              <button
+                type="button"
+                onClick={() => scroll("left")}
+                aria-label="Anterior"
+                className="grid h-11 w-11 place-items-center border border-line bg-white text-ink transition hover:border-ink hover:bg-cream-soft/40"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => scroll("right")}
+                aria-label="Próximo"
+                className="grid h-11 w-11 place-items-center bg-brand-500 text-white transition hover:bg-brand-600"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M9 6l6 6-6 6" />
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            ref={scrollerRef}
+            className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
             {services.map((service) => {
               const isHighlight = service.highlight;
               return (
                 <article
                   key={service.title}
-                  className={`p-6 transition ${
+                  className={`flex w-[260px] flex-shrink-0 snap-start flex-col p-6 transition sm:w-[280px] ${
                     isHighlight
                       ? "bg-brand-500 text-white"
                       : "bg-cream-soft/40 text-ink hover:bg-cream-soft/70"
@@ -78,14 +118,16 @@ export function Services() {
                 >
                   <div
                     className={`grid h-10 w-10 place-items-center rounded-full ${
-                      isHighlight ? "bg-white text-brand-500" : "bg-brand-500 text-white"
+                      isHighlight
+                        ? "bg-white text-brand-500"
+                        : "bg-brand-500 text-white"
                     }`}
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d={service.iconPath} />
                     </svg>
                   </div>
-                  <h3 className="mt-8 text-sm font-bold uppercase tracking-widest">
+                  <h3 className="mt-16 text-sm font-bold uppercase tracking-widest">
                     {service.title}
                   </h3>
                   <p

@@ -24,7 +24,7 @@ export function Header() {
 
   return (
     <header className="bg-white">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <Logo />
 
         <nav className="hidden items-center gap-8 md:flex">

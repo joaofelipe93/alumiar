@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 
+import teamImg from "../assets/mandate/team.jpg";
+
 export function Mandate() {
   return (
-    <section className="bg-cream py-12">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="bg-white">
+      <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="bg-white p-8 md:p-12">
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
-            <div className="aspect-[4/3] w-full bg-gradient-to-br from-brand-200 via-cream to-brand-400" />
+            <img
+              src={teamImg}
+              alt="Time Alumiar"
+              className="aspect-[4/3] w-full object-cover"
+            />
 
             <div>
               <h2 className="text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-ink md:text-5xl">
@@ -29,7 +35,14 @@ export function Mandate() {
               <div className="mt-10 grid gap-4 sm:grid-cols-2">
                 <div className="bg-cream-soft/40 p-5">
                   <div className="grid h-9 w-9 place-items-center rounded-full bg-brand-500 text-white">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                    >
                       <path d="M3 12h4l3-9 4 18 3-9h4" />
                     </svg>
                   </div>
@@ -37,13 +50,20 @@ export function Mandate() {
                     Execução Data-First
                   </p>
                   <p className="mt-2 text-xs text-muted">
-                    Cada decisão é validada por inteligência de mercado em
-                    tempo real e modelos proprietários.
+                    Cada decisão é validada por inteligência de mercado em tempo
+                    real e modelos proprietários.
                   </p>
                 </div>
                 <div className="bg-cream-soft/40 p-5">
                   <div className="grid h-9 w-9 place-items-center rounded-full bg-brand-500 text-white">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                    >
                       <circle cx="12" cy="8" r="4" />
                       <path d="M4 21a8 8 0 0116 0" />
                     </svg>
@@ -52,8 +72,8 @@ export function Mandate() {
                     Foco no Cliente
                   </p>
                   <p className="mt-2 text-xs text-muted">
-                    Nosso sucesso é medido apenas pelo crescimento mensurável
-                    e de alta velocidade dos parceiros.
+                    Nosso sucesso é medido apenas pelo crescimento mensurável e
+                    de alta velocidade dos parceiros.
                   </p>
                 </div>
               </div>

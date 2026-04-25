@@ -4,8 +4,8 @@ import { Mandate } from "../sections/Mandate";
 export function AboutPage() {
   return (
     <>
-      <section className="bg-cream pb-4 pt-12">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="bg-white p-8 md:p-12">
             <p className="text-[10px] font-bold uppercase tracking-widest text-brand-500">
               Sobre nós
