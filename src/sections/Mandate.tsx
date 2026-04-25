@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import teamImg from "../assets/mandate/team.jpg";
+import teamImg from "../assets/mandate/team.webp";
 
 export function Mandate() {
   return (
